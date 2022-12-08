@@ -1,0 +1,64 @@
+.login-section-big-box-will-flow{
+  z-index: 500;
+  position: absolute;
+  top: 13%; 
+  right: 2%;
+  background: #E9E4F0;
+  border: none;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 1px #7F7FD5;
+}
+.container{
+  background: #E9E4F0;
+  padding: 0.3rem 1rem;
+}
+
+.h4-title-login{
+  margin: 2px 0 5px 0;
+  font-size: 1.5rem;
+  color: #240b36;
+  text-align: center;
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+.form-control{
+  height: 50px;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #7F7FD5;
+  opacity: 0.8;
+}
+.form-group input{
+  text-transform: none;
+  font-size: 1rem;
+  color: #373B44;
+}
+.control-label-login{
+  font-size: 1rem;
+  color: #373B44;
+  letter-spacing: 1px;
+}
+.vl-txt-size{
+  font-size: 0.9rem;
+}
+.question-before-login p{
+  margin: 0;
+}
+.question-before-login p, a{
+  font-size: 0.9rem;
+  color: #373B44;
+  text-align: left;
+}
+.first-question span{
+  color: #7F7FD5;
+}
+.first-question a:hover{
+  color: #7F7FD5;
+}
+.second-question a:hover{
+  color: #7F7FD5;
+}

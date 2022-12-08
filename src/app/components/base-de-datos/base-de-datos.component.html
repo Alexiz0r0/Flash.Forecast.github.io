@@ -1,0 +1,23 @@
+<div class="table-responsive-sm">
+  <table class="table">
+    <thead class="">
+      <tr>
+        <th>Ciudad</th>
+        <th>Temperatura Min.</th>
+        <th>Temperatura Max.</th>
+        <th>Humidity</th>
+        <th>Pressure</th>
+      </tr>
+    </thead>
+    <tbody class="table-group-divider">
+      <tr>
+        <td> {{listarInfo?.name}} </td> 
+        <td> {{listarInfo?.main?.temp_min}} <span>C°</span></td>  
+        <td> {{listarInfo?.main?.temp_max}} <span>C°</span></td> 
+        <td> {{listarInfo?.main?.humidity}} <span>%</span></td>
+        <td> {{listarInfo?.main?.pressure}} <span>hPa</span></td> 
+      </tr>
+    </tbody>
+  </table>
+  <ngx-spinner bdColor="rgba(51,51,51,0.8)" size="medium" color="#fff" type="ball-scale-multiple"><p style="font-size: 20px; color: white">Loading...</p></ngx-spinner>
+</div>

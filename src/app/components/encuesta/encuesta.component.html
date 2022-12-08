@@ -1,0 +1,45 @@
+<!-- * * * * * * * * * * ENCUESTA  * * * * * * * * * * * * * * * * -->
+<div class="big-container">
+  <div class="row1-container">
+    <div class="col1-container">
+      <h3 class="h3-title">Pronóstico del tiempo</h3>
+    </div>
+    <div class="col2-container">
+      <form class="form">
+        <select class="form-select selected" size="3" aria-label="size3" #city (change)="onSelected(city.value)">
+          <option selected disabled>Seleccione una ciudad</option>
+          <option value="3936452">Lima</option>
+          <option value="3698350">Chiclayo</option>
+          <option value="3691175">Trujillo</option>
+          <option value="3939459">Huancayo</option>
+          <option value="3938526">Ica</option>
+          <option value="3698540">Chachapoyas</option>
+          <option value="3696378">Huaraz</option>
+          <option value="3947322">Arequipa</option>
+          <option value="3947019">Ayacucho</option>
+          <option value="3699087">Cajamarca</option>
+          <option value="3946080">Callao</option>
+          <option value="3941584">Cuzco</option>
+          <option value="3939470">Huancavelica</option>
+          <option value="3947956">Ambo</option>
+          <option value="3940002">Huacho</option>
+          <option value="3696183">Iquitos</option>
+          <option value="3931470">Puerto Maldonado</option>
+          <option value="3934608">Moquegua</option>
+          <option value="3944797">Cerro de Pasco</option>
+          <option value="3693528">Piura</option>
+          <option value="3931276">Puno</option>
+          <option value="3694564">Moyobamba</option>
+          <option value="3928127">Tacna</option>
+          <option value="3691148">Tumbes</option>
+          <option value="3693345">Pucallpa</option>
+        </select>
+      </form>
+    </div>
+  </div>
+  <div class="row2-container">
+    <div class="d-grid gap-2 col-6 mx-auto my-3">
+      <button type="submit" class="btn btn-success btn-lg" (click)="successMsg()">Enviar</button>
+    </div>
+  </div>
+</div>

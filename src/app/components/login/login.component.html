@@ -1,0 +1,52 @@
+<section class="login-section-big-box-will-flow">
+  <div class="container mx-auto">
+    
+    <h4 class="h4-title-login">Iniciar sesión</h4>
+    <div class="login-section">
+      <form class="login-form" (ngSubmit)="onSubmit()" [formGroup]="form">
+
+        <p class="text-center my-2">
+          <ngb-alert [dismissible]="false" *ngIf="isSubmitted && !isValidUser" type='danger'>
+            <strong>User or password is incorrect</strong>
+          </ngb-alert>
+        </p>
+
+        <!-- Name input - Validation -->
+        <div class="text-end mb-1">
+          <span *ngIf="(form.get('user')?.touched || isSubmitted) && form.get('user')?.errors?.['required']" class="text-danger vl-txt-size"><i class="fas fa-exclamation"></i>Este campo no puede quedar vacío</span>
+        </div>
+        <!-- User input -->
+        <div class="form-floating">
+          
+          <input type="text" name="user" id="user" placeholder="Usuario" class="form-control" formControlName="user"/>
+          <label class="control-label-login" for="user">Usuario</label>
+
+        </div>
+        <!-- Password input - Validation -->
+        <div class="text-end mb-1">
+          <span *ngIf="(form.get('password')?.touched  || isSubmitted)  && form.get('password')?.errors?.['required']" class="text-danger vl-txt-size"><i class="fas fa-exclamation"></i>Este campo no puede quedar vacío</span>
+        </div>
+        <!-- Password input - Validation -->
+        <div class="form-floating">
+
+          <input type="password" name="password" id="password" placeholder="Password" class="form-control" formControlName="password"/>
+          <label class="control-label-login" for="password">Password</label>
+        
+        </div>
+
+        <div class="question-before-login">
+          <p class="first-question"><a href="#"><span>¿</span>Olvidaste tu contraseña<span>?</span></a></p>
+          <p class="second-question">¿No tienes una cuenta? <a href="#">Regístrate</a></p>
+        </div>
+
+        <!-- Submit button -->
+        <div class="d-grid gap-2 col-6 mx-auto my-2">
+          <button type="submit" class="btn btn-primary mt-2 float-right">
+            Login
+          </button>
+        </div>
+        
+      </form>
+    </div>
+  </div>
+</section>

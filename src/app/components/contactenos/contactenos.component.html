@@ -1,0 +1,105 @@
+
+<!-- * * * * * * * * * * CONTACTENOS * * * * * * * * * * * * * * * -->
+<div class="container">
+  <div class="form-box">
+    <div class="contact-info">
+      <h3 class="h3-title">
+        Contáctenos
+      </h3>
+      <p class="p-text">
+        Una gran visión sin grandes personas es irrelevante. <span>Trabajemos juntos.</span> 
+      </p>
+      <div class="company-info-box">
+        <div class="company-info">
+          <p class="p-text-icon"><span class="icon"><i class="fas fa-map-marker-alt"></i></span>
+          Jr. Ernesto Plascencia 355, San Isidro, Lima</p>
+        </div>
+        <div class="company-info">
+          <p class="p-text-icon"><span class="icon"><i class="far fa-at"></i></span>
+          lorem@ipsum.com</p>
+        </div>
+        <div class="company-info">
+          <p class="p-text-icon"><span class="icon"><i class="fas fa-phone-square-alt"></i></span>
+          123-456</p>
+        </div>
+      </div>
+      <div class="social-media">
+        <p>Síguenos:</p>
+        <div class="social-icons">
+          <a href="#">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="#">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="#">
+            <i class="fab fa-instagram"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="contact-form">
+      <form (ngSubmit)="onSubmit()" [formGroup]="contactForm">   
+        <div class="form-group">
+          <p class="text-center mb-2">
+            <ngb-alert [dismissible]="false" type='success' *ngIf="isSubmittedBtn && contactForm.valid">
+              <strong>{{msgThx}}</strong>
+            </ngb-alert>
+          </p>
+          <!-- Name input - Validation -->   
+          <div class="text-end mb-1">
+            <span *ngIf="contactForm.get('nombre')?.touched && contactForm.get('nombre')?.errors?.['required']" class="text-danger" >
+              <i class="fas fa-exclamation"></i>
+              Este campo no puede quedar vacío
+            </span>   
+            <span *ngIf="contactForm.get('nombre')?.touched && contactForm.get('nombre')?.errors?.['minlength']" class="text-danger" >
+              <i class="fas fa-exclamation"></i>
+              Debe tener como mínimo {{contactForm.get('nombre')?.errors?.['minlength'].requiredLength}} caracteres
+            </span>
+          </div>         
+          <!-- Name input -->
+          <div class="form-floating">
+            <input type="text" name="nombre" id="nombre" class="form-control" placeholder="Nombre" formControlName="nombre" required/>
+            <label class="control-label" for="nombre" >Nombre Completo</label>
+          </div>   
+          <!-- Email input Validation -->    
+          <div class="text-end mb-1">
+            <span *ngIf="contactForm.get('correo')?.touched && contactForm.get('correo')?.errors?.['required']" class="text-danger">
+              <i class="fas fa-exclamation"></i>
+              Este campo no puede quedar vacío
+            </span>  
+            <span *ngIf="contactForm.get('correo')?.touched && contactForm.get('correo')?.errors?.['email']" class="text-danger" >
+              <i class="fas fa-exclamation"></i>
+              El correo electrónico no es válido
+            </span>
+          </div>  
+          <!-- Email input -->    
+          <div class="form-floating">        
+            <input type="email" name="correo" id="correo" class="form-control" placeholder="Email" formControlName="correo" required/>
+            <label class="control-label" for="correo">Email</label>
+          </div>
+          <!-- Message input Validation -->   
+          <div class="text-end mb-1">
+            <span *ngIf="contactForm.get('mensaje')?.touched && contactForm.get('mensaje')?.errors?.['required']" class="text-danger">
+              <i class="fas fa-exclamation"></i>
+              Este campo no puede quedar vacío
+            </span>
+            <span *ngIf="contactForm.get('mensaje')?.touched && contactForm.get('mensaje')?.errors?.['maxlength']" class="text-danger">
+              <i class="fas fa-exclamation"></i>
+              Debe tener como mínimo {{contactForm.get('mensaje')?.errors?.['maxlength'].requiredLength}} caracteres
+            </span>
+          </div>
+          <!-- Message input -->
+          <div class="form-floating">
+            <textarea class="form-control" name="mensaje" id="mensaje" style="height: 100px" formControlName="mensaje" required placeholder="Mensaje"></textarea>
+            <label class="control-label" for="mensaje">Mensaje</label>
+          </div>      
+          <!-- Submit button -->
+          <div class="d-grid gap-2 col-6 mx-auto">
+            <button type="submit" class="btn btn-lg" [disabled]="contactForm.invalid">Enviar</button>
+          </div> 
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

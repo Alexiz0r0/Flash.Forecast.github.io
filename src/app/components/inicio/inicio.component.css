@@ -1,0 +1,22 @@
+.picture-carousel{
+  width: 1116px;
+  height: 489px;
+  object-fit: cover;
+}
+.carousel-inner{
+  border-radius: 10px;
+}
+.h2-text{
+  font-size: 2rem;
+  font-weight: 400;
+}
+.carousel-control-prev span i,
+.carousel-control-next span i{
+  color: #7F7FD5;
+  font-size: 3rem;
+  transition: 0.3s;
+}
+.carousel-control-prev span i:hover,
+.carousel-control-next span i:hover{
+  transform: scale(1.05);
+}
